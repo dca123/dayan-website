@@ -43,23 +43,23 @@ $$
 Our friend GPT-4 however, hallucinates itself into believing it can capture the nuance of the paradox that Derrida describes, and fails miserably:
 
 $$
-∀x[C(x)→(P(x)∧S(x)∧F(x)∧G(x)∧I(x)∧H(x))]
+\forall x (C(x) \to (P(x) \land S(x) \land F(x) \land G(x) \land I(x) \land H(x)))
 $$
 
 $$
-∀x[C(x)→¬∃y(T(x)∧E(y,x))]∀x[C(x)→¬∃y(T(x)∧E(y,x))]
+\forall x (C(x) \to \lnot \exists y (T(x) \land E(y,x)))
 $$
 
 $$
-∀x[C(x)→¬F(x)]∀x[C(x)→¬F(x)]
+\forall x (C(x) \to \lnot F(x))
 $$
 
 $$
-∀x[C(x)→(W(x)→¬O(x))]∀x[C(x)→(W(x)→¬O(x))]
+\forall x (C(x) \to (W(x) \to \lnot O(x)))
 $$
 
 $$
-∀x[C(x)→¬W(x)]∀x[C(x)→¬W(x)]
+\forall x (C(x) \to \lnot W(x))
 $$
 
 The purpose of this foreword was to illustrate the fragile nature and often paradoxical nature of symbols. The relevance of this section was to remind ourselves, as data scientists, researchers, and policy practitioners–that the tools we take for granted are simply still tools–not truths. On our journey towards the vision of a general artificial intelligence, of which natural language processing is a large part of, we must be precarious in our approach and acknowledge limits but not be limited by them. Quantum physics is still paradoxical, but that does not mean it isn’t useful. The same follows for the study of language and the limits of its computability. We may look to Kant for inspiration on our journey:
