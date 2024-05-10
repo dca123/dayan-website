@@ -1,7 +1,21 @@
 ---
+import Card from '../components/Card.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Welcome to Astro.">
-  <main></main>
+<Layout title="dayan's life">
+  <main class="p-12 space-y-8">
+    <div class="flex flex-row justify-between space-x-6">
+      <Card href="/my-work" title="my work"> Here is a sample of my work </Card>
+      <Card href="/my-work" title="my coding">
+        Here is a sample of my work
+      </Card>
+      <Card href="/my-work" title="my writing">
+        Here is a sample of my work
+      </Card>
+    </div>
+    <div>
+      <Card href="" title="about me">Hey it's me</Card>
+    </div>
+  </main>
 </Layout>

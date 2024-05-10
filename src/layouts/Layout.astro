@@ -19,6 +19,15 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
+    <div class="p-6 flex flex-row justify-between">
+      <h1>dayan's life</h1>
+      <nav class="space-x-2">
+        <a href="">Blog</a>
+        <a href="">Github</a>
+        <a href="">Twitter</a>
+      </nav>
+    </div>
+    <hr class="border-t-zinc-900 border-t-2" />
     <slot />
   </body>
 </html>
