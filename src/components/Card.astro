@@ -8,15 +8,15 @@ const { href, title } = Astro.props;
 ---
 
 <div
-  class="border-2 p-4 w-full border-zinc-900 rounded-lg shadow-zinc-800 card-shadow h-64"
+  class="border-2 p-4 w-full border-zinc-900 rounded-lg shadow-zinc-800 card-shadow bg-zinc-50 h-full"
 >
-  <a href={href} class="space-y-2">
+  <a href={href} class="space-y-4">
     <h2 class="text-5xl">
       {title}
     </h2>
-    <p>
+    <div>
       <slot />
-    </p>
+    </div>
   </a>
 </div>
 

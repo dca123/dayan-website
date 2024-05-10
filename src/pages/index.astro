@@ -1,21 +1,44 @@
 ---
 import Card from '../components/Card.astro';
 import Layout from '../layouts/Layout.astro';
+
+const content = Array.from(
+  Array(5),
+  () =>
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
+);
 ---
 
 <Layout title="dayan's life">
   <main class="p-12 space-y-8">
-    <div class="flex flex-row justify-between space-x-6">
-      <Card href="/my-work" title="my work"> Here is a sample of my work </Card>
+    <div
+      class="flex flex-row flex-wrap justify-between md:space-x-6 md:flex-nowrap"
+    >
+      <Card href="/my-work" title="my work">
+        {content.map((text) => <p>{text}</p>)}
+      </Card>
       <Card href="/my-work" title="my coding">
-        Here is a sample of my work
+        {content.map((text) => <p>{text}</p>)}
       </Card>
       <Card href="/my-work" title="my writing">
-        Here is a sample of my work
+        {content.map((text) => <p>{text}</p>)}
       </Card>
     </div>
     <div>
-      <Card href="" title="about me">Hey it's me</Card>
+      <Card href="" title="about me">
+        <p>
+          I'm a twisted, high-powered Senior Researcher at LIRNEasia, a wild
+          ride of scholarly rigor and practical expertise. I use data-centric
+          methodologies to tackle gnarly issues and spark real change. My
+          background is a strange trip - a Bachelor's in Liberal Arts & Sciences
+          from the wilds of Quest University (British Columbia), where I got
+          deep into computational mathematics and critical theory, especially
+          the dark side of security and intelligence studies. Before joining
+          this circus, I was knee-deep in public policy research, focused on the
+          twisted world of political media. I consulted for some wild characters
+          - political bodies and NGOs in Canada and Sri Lanka.
+        </p>
+      </Card>
     </div>
   </main>
 </Layout>
