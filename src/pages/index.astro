@@ -20,13 +20,13 @@ const content = () =>
         <div class="space-y-4">
           {
             content().map((text) => (
-              <div class="flex flex-row items-start space-x-5">
-                <div>
-                  <h3 class="w-max pt-0.5 font-light">{text.dateCreated}</h3>
+              <div class="flex flex-row items-start space-x-2">
+                <div class="basis-1/5 ">
+                  <h3 class="pt-0.5 font-light">{text.dateCreated}</h3>
                 </div>
-                <div class="space-y-0">
+                <div class="basis-4/5 space-y-0">
                   <h3 class="text-lg">{text.title}</h3>
-                  <p class="">{text.summary}</p>
+                  <p class="font-light">{text.summary}</p>
                 </div>
               </div>
             ))
@@ -37,13 +37,13 @@ const content = () =>
         <div class="space-y-4">
           {
             content().map((text) => (
-              <div class="flex flex-row items-start space-x-5">
-                <div>
-                  <h3 class="w-max pt-0.5 font-light">{text.dateCreated}</h3>
+              <div class="flex flex-row items-start space-x-2">
+                <div class="basis-1/5 ">
+                  <h3 class="pt-0.5 font-light">{text.dateCreated}</h3>
                 </div>
-                <div class="space-y-0">
+                <div class="basis-4/5 space-y-0">
                   <h3 class="text-lg">{text.title}</h3>
-                  <p class="">{text.summary}</p>
+                  <p class="font-light">{text.summary}</p>
                 </div>
               </div>
             ))
@@ -54,13 +54,13 @@ const content = () =>
         <div class="space-y-4">
           {
             content().map((text) => (
-              <div class="flex flex-row items-start space-x-5">
-                <div>
-                  <h3 class="w-max pt-0.5 font-light">{text.dateCreated}</h3>
+              <div class="flex flex-row items-start space-x-2">
+                <div class="basis-1/5 ">
+                  <h3 class="pt-0.5 font-light">{text.dateCreated}</h3>
                 </div>
-                <div class="space-y-0">
+                <div class="basis-4/5 space-y-0">
                   <h3 class="text-lg">{text.title}</h3>
-                  <p class="">{text.summary}</p>
+                  <p class="font-light">{text.summary}</p>
                 </div>
               </div>
             ))
@@ -78,19 +78,22 @@ const content = () =>
       </div>
       <div class="h-min basis-2/3">
         <Card href="" title="about me">
-          <p>
-            I'm a twisted, high-powered Senior Researcher at LIRNEasia, a wild
-            ride of scholarly rigor and practical expertise. I use data-centric
-            methodologies to tackle gnarly issues and spark real change. My
-            background is a strange trip - a Bachelor's in Liberal Arts &
-            Sciences from the wilds of Quest University (British Columbia),
-            where I got deep into computational mathematics and critical theory,
-            especially the dark side of security and intelligence studies.
-            Before joining this circus, I was knee-deep in public policy
-            research, focused on the twisted world of political media. I
-            consulted for some wild characters - political bodies and NGOs in
-            Canada and Sri Lanka.
-          </p>
+          <div class="ml-1 space-y-1">
+            <p>
+              I like symbols, both words and numbers. My research in language is
+              driven by this curiosity in how language shapes human experience.
+            </p>
+            <p>
+              I earned a Bachelor’s degree in Liberal Arts & Sciences from Quest
+              University (British Columbia), with a focus on mathematics and
+              critical theory.
+            </p>
+            <p>
+              Currently, I serve as a Senior Researcher in NLP R&D,(and
+              implementation,) and TMT policy. Before that, I consulted at
+              McKinsey for 2 years. Both focused on the APAC.
+            </p>
+          </div>
         </Card>
       </div>
     </div>
