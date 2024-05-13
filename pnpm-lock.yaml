@@ -38,8 +38,11 @@ dependencies:
 
 devDependencies:
   '@devsen/prettier-rc':
-    specifier: ^1.0.0
-    version: 1.0.0
+    specifier: ^1.1.0
+    version: 1.1.0
+  '@faker-js/faker':
+    specifier: ^8.4.1
+    version: 8.4.1
 
 packages:
 
@@ -409,8 +412,8 @@ packages:
       to-fast-properties: 2.0.0
     dev: false
 
-  /@devsen/prettier-rc@1.0.0:
-    resolution: {integrity: sha512-oRYWWVqEtx2JzisSWe3+9VPF0lK/jOlKThRwWtP9KoMkeye2Fg5NTkzMAqQH6NyR7fBREQncmGOgfpYD0xKvug==}
+  /@devsen/prettier-rc@1.1.0:
+    resolution: {integrity: sha512-MFt+xt6rJbl/Dm3gj8YEJPGfvZeDZ02mR9ksBuwnVhu3+ABs5179QiAiKfVA179vzCwW/EHYkJnKAZX/vAO9Yw==}
     dev: true
 
   /@emmetio/abbreviation@2.3.3:
@@ -850,6 +853,11 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /@faker-js/faker@8.4.1:
+    resolution: {integrity: sha512-XQ3cU+Q8Uqmrbf2e0cIC/QN43sTBSC8KF12u29Mb47tWrt2hAgBXSgpZMj4Ao8Uk0iJcU99QsOCaIL8934obCg==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0, npm: '>=6.14.13'}
+    dev: true
 
   /@fontsource/source-sans-pro@5.0.8:
     resolution: {integrity: sha512-5U2UvIYRkCMozZ388gCE73PEpa2MFgN/0t9O4a1FF7bGT/MIneQWSL1XpWZ8iMVYdh6ntxRf3iFA6slCIuFgkg==}

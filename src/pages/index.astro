@@ -3,56 +3,103 @@ import Card from '../components/Card.astro';
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import avatar from '../avatar.png';
+import { faker } from '@faker-js/faker';
 
-const content = Array.from(
-  Array(3),
-  () =>
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-);
+const content = () =>
+  Array.from(Array(3), () => ({
+    title: faker.lorem.words({ min: 3, max: 5 }),
+    summary: faker.lorem.sentence({ min: 4, max: 15 }),
+    dateCreated: faker.date.past({ years: 2 }).toLocaleDateString(),
+  }));
 ---
 
 <Layout title="dayan's life">
-  <main class="p-12 space-y-8">
+  <main class="space-y-10 p-12">
     <div class="flex flex-row justify-between space-x-4">
       <Card href="/my-work" title="my work">
         <div class="space-y-4">
-          {content.map((text) => <p>{text}</p>)}
+          {
+            content().map((text) => (
+              <div class="flex flex-row items-start space-x-2">
+                <div class="basis-1/5 ">
+                  <h3 class="pt-0.5 text-right font-light">
+                    {text.dateCreated}
+                  </h3>
+                </div>
+                <div class="basis-4/5 space-y-0">
+                  <h3 class="text-lg">{text.title}</h3>
+                  <p class="font-light">{text.summary}</p>
+                </div>
+              </div>
+            ))
+          }
         </div>
       </Card>
       <Card href="/my-work" title="my work">
         <div class="space-y-4">
-          {content.map((text) => <p>{text}</p>)}
+          {
+            content().map((text) => (
+              <div class="flex flex-row items-start space-x-2">
+                <div class="basis-1/5 ">
+                  <h3 class="pt-0.5 text-right font-light">
+                    {text.dateCreated}
+                  </h3>
+                </div>
+                <div class="basis-4/5 space-y-0">
+                  <h3 class="text-lg">{text.title}</h3>
+                  <p class="font-light">{text.summary}</p>
+                </div>
+              </div>
+            ))
+          }
         </div>
       </Card>
       <Card href="/my-work" title="my work">
         <div class="space-y-4">
-          {content.map((text) => <p>{text}</p>)}
+          {
+            content().map((text) => (
+              <div class="flex flex-row items-start space-x-2">
+                <div class="basis-1/5 ">
+                  <h3 class="pt-0.5 text-right font-light">
+                    {text.dateCreated}
+                  </h3>
+                </div>
+                <div class="basis-4/5 space-y-0">
+                  <h3 class="text-lg">{text.title}</h3>
+                  <p class="font-light">{text.summary}</p>
+                </div>
+              </div>
+            ))
+          }
         </div>
       </Card>
     </div>
-    <div class="flex flex-row space-x-4 justify-center items-center">
+    <div class="flex flex-row items-center justify-center space-x-4">
       <div class="basis-1/3">
         <Image
           src={avatar}
           alt="Picture of me"
-          class="w-[80%] rounded-full border-2 border-zinc-900 bg-zinc-50 shadow-zinc-800 card-shadow ml-[10%]"
+          class="card-shadow ml-[10%] w-[80%] rounded-full border-2 border-zinc-900 bg-zinc-50 shadow-zinc-800"
         />
       </div>
-      <div class="basis-2/3 h-min">
+      <div class="h-min basis-2/3">
         <Card href="" title="about me">
-          <p>
-            I'm a twisted, high-powered Senior Researcher at LIRNEasia, a wild
-            ride of scholarly rigor and practical expertise. I use data-centric
-            methodologies to tackle gnarly issues and spark real change. My
-            background is a strange trip - a Bachelor's in Liberal Arts &
-            Sciences from the wilds of Quest University (British Columbia),
-            where I got deep into computational mathematics and critical theory,
-            especially the dark side of security and intelligence studies.
-            Before joining this circus, I was knee-deep in public policy
-            research, focused on the twisted world of political media. I
-            consulted for some wild characters - political bodies and NGOs in
-            Canada and Sri Lanka.
-          </p>
+          <div class="ml-1 space-y-1">
+            <p>
+              I like symbols, both words and numbers. My research in language is
+              driven by this curiosity in how language shapes human experience.
+            </p>
+            <p>
+              I earned a Bachelor’s degree in Liberal Arts & Sciences from Quest
+              University (British Columbia), with a focus on mathematics and
+              critical theory.
+            </p>
+            <p>
+              Currently, I serve as a Senior Researcher in NLP R&D,(and
+              implementation,) and TMT policy. Before that, I consulted at
+              McKinsey for 2 years. Both focused on the APAC.
+            </p>
+          </div>
         </Card>
       </div>
     </div>
