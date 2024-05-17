@@ -1,0 +1,66 @@
+---
+import Layout from './Layout.astro';
+import type { MarkdownLayoutProps } from 'astro';
+
+type Props = MarkdownLayoutProps<{
+  title: string;
+}>;
+const { frontmatter } = Astro.props;
+console.log({ props: Astro.props, frontmatter });
+---
+
+<Layout title={frontmatter.title}>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.css"
+    integrity="sha384-WsHMgfkABRyG494OmuiNmkAOk8nhO1qE+Y6wns6v+EoNoTNxrWxYpl5ZYWFOLPCM"
+    crossorigin="anonymous"
+  />
+
+  <div class="flex flex-col items-center">
+    <div class="my-12 space-y-3">
+      <h2 class="text-4xl font-light">
+        {frontmatter.title}
+      </h2>
+      <div class="flex flex-row justify-center space-x-3">
+        <div
+          class="chip-shadow rounded-full border-2 border-zinc-900 bg-zinc-50 px-6 py-1 shadow-zinc-800"
+        >
+          language
+        </div>
+        <div
+          class="chip-shadow rounded-full border-2 border-zinc-900 bg-zinc-50 px-6 py-1 shadow-zinc-800"
+        >
+          wittgenstein
+        </div>
+        <div
+          class="chip-shadow rounded-full border-2 border-zinc-900 bg-zinc-50 px-6 py-1 shadow-zinc-800"
+        >
+          symbols
+        </div>
+      </div>
+      <div class="flex flex-row justify-center space-x-3">
+        <h3 class="font-light">12/12/2024</h3>
+        <h3 class="font-light">5 min read</h3>
+      </div>
+    </div>
+
+    <div
+      class="card-shadow mb-12 rounded-lg border-2 border-zinc-900 bg-zinc-50 p-6 pb-8 shadow-zinc-800"
+    >
+      <article class="prose prose-zinc lg:prose-xl">
+        <slot />
+      </article>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .card-shadow {
+    box-shadow: var(--tw-shadow-color) 7px 7px;
+  }
+
+  .chip-shadow {
+    box-shadow: var(--tw-shadow-color) 5px 5px;
+  }
+</style>
