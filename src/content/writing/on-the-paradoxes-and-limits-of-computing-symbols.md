@@ -1,7 +1,8 @@
 ---
-layout: ../../layouts/BlogLayout.astro
 publishedDate: 2023-02-12
-tags: computing symbols
+tags: 
+    - computing 
+    - symbols
 title: On the paradoxes and limits of computing symbols
 summary: Exploring the historical trajectory from Wittgenstein to Derrida, highlighting the paradoxical nature of symbols and emphasizing the need for cautious exploration in the pursuit of artificial intelligence and natural language processing.
 ---

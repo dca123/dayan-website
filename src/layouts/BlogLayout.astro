@@ -1,14 +1,14 @@
 ---
 import Layout from './Layout.astro';
-import type { MarkdownLayoutProps } from 'astro';
-
-type Props = MarkdownLayoutProps<{
+interface Props {
   title: string;
-}>;
-const { frontmatter } = Astro.props;
+  tags: Array<string>;
+  publishedDate: Date;
+}
+const { title, tags, publishedDate } = Astro.props;
 ---
 
-<Layout title={frontmatter.title}>
+<Layout title={title}>
   <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.css"
@@ -17,29 +17,21 @@ const { frontmatter } = Astro.props;
   />
 
   <div class="flex flex-col items-center">
-    <div class="my-12 space-y-3">
+    <div class="my-12 space-y-3 text-center">
       <h2 class="text-4xl font-light">
-        {frontmatter.title}
+        {title}
       </h2>
       <div class="flex flex-row justify-center space-x-3">
-        <div
-          class="chip-shadow rounded-full border-2 border-zinc-900 bg-zinc-50 px-6 py-1 shadow-zinc-800"
-        >
-          language
-        </div>
-        <div
-          class="chip-shadow rounded-full border-2 border-zinc-900 bg-zinc-50 px-6 py-1 shadow-zinc-800"
-        >
-          wittgenstein
-        </div>
-        <div
-          class="chip-shadow rounded-full border-2 border-zinc-900 bg-zinc-50 px-6 py-1 shadow-zinc-800"
-        >
-          symbols
-        </div>
+        {
+          tags.map((tag) => (
+            <div class="chip-shadow rounded-full border-2 border-zinc-900 bg-zinc-50 px-6 py-1 shadow-zinc-800">
+              {tag}
+            </div>
+          ))
+        }
       </div>
       <div class="flex flex-row justify-center space-x-3">
-        <h3 class="font-light">12/12/2024</h3>
+        <h3 class="font-light">{publishedDate.toLocaleDateString()}</h3>
         <h3 class="font-light">5 min read</h3>
       </div>
     </div>

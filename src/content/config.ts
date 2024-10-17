@@ -4,7 +4,7 @@ const writingCollection = defineCollection({
   type: 'content',
   schema: z.object({
     publishedDate: z.date(),
-    tags: z.string(),
+    tags: z.array(z.string()),
     title: z.string(),
     summary: z.string(),
   }),
