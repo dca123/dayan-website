@@ -6,7 +6,6 @@ type Props = MarkdownLayoutProps<{
   title: string;
 }>;
 const { frontmatter } = Astro.props;
-console.log({ props: Astro.props, frontmatter });
 ---
 
 <Layout title={frontmatter.title}>
