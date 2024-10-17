@@ -11,11 +11,14 @@ interface Props {
 }
 
 const { title } = Astro.props;
+import { ViewTransitions } from 'astro:transitions';
+import Footprint from '../components/Footprint.astro';
 ---
 
 <!doctype html>
 <html lang="en" class="h-full">
   <head>
+    <Footprint />
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
@@ -24,9 +27,10 @@ const { title } = Astro.props;
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="generator" content={Astro.generator} />
+    <ViewTransitions />
     <title>{title}</title>
   </head>
-  <body class="flex min-h-full flex-col bg-zinc-200">
+  <body class="flex min-h-full flex-col justify-center bg-zinc-200">
     <div class="flex flex-row justify-between bg-zinc-50 p-6">
       <h1><a href="/">dayan's life</a></h1>
       <nav class="space-x-2">
@@ -39,7 +43,7 @@ const { title } = Astro.props;
       </nav>
     </div>
     <hr class="border-t-2 border-t-zinc-900" />
-    <main class="grow">
+    <main class="container mx-auto grow">
       <slot />
     </main>
   </body>

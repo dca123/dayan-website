@@ -10,12 +10,16 @@ const myWriting = await getCollection('writing');
 
 <Layout title="dayan's life">
   <main class="space-y-10 p-12">
-    <div class="flex flex-row justify-between space-x-4">
+    <div
+      class="flex flex-col space-y-4 md:flex-row md:justify-between md:space-x-8 md:space-y-0"
+    >
       <Card title="my writing" content={myWriting.slice(0, 3)} />
       <Card title="my work" content={[]} />
       <Card title="my work" content={[]} />
     </div>
-    <div class="flex flex-row items-center justify-center space-x-4">
+    <div
+      class="flex flex-col items-center justify-center space-y-4 md:flex-row md:space-x-4"
+    >
       <div class="basis-1/3">
         <Image
           src={avatar}
