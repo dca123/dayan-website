@@ -1,23 +1,50 @@
 ---
+import type { InferEntrySchema } from 'astro:content';
+
 interface Props {
   title: string;
-  href: string;
+  content: Array<{
+    slug: string;
+    data: InferEntrySchema<'writing'>;
+  }>;
 }
 
-const { href, title } = Astro.props;
+const { title, content } = Astro.props;
 ---
 
 <div
-  class="border-2 p-6 pb-8 w-full border-zinc-900 rounded-lg shadow-zinc-800 card-shadow bg-zinc-50"
+  class="card-shadow flex w-full flex-col space-y-4 rounded-lg border-2 border-zinc-900 bg-zinc-50 p-6 pb-8 shadow-zinc-800"
 >
-  <a href={href} class="space-y-4">
-    <h2 class="text-5xl">
-      {title}
-    </h2>
-    <div>
-      <slot />
-    </div>
-  </a>
+  <h2 class="text-5xl">
+    {title}
+  </h2>
+  {
+    content.length === 0 ? (
+      <div class="flex grow items-center justify-center">
+        <h1 class="italic">i'll get on this, tommorow for sure</h1>
+      </div>
+    ) : (
+      <div class="flex flex-col space-y-4">
+        {content.map((article) => (
+          <a href={`/my-writing/${article.slug}`}>
+            <div class="group flex cursor-pointer flex-row items-start space-x-3">
+              <div class="basis-1/5 ">
+                <h3 class="pt-0.5 text-right font-light">
+                  {article.data.publishedDate.toLocaleDateString()}
+                </h3>
+              </div>
+              <div class="basis-4/5 space-y-0">
+                <h3 class="text-lg group-hover:underline">
+                  {article.data.title}
+                </h3>
+                <p class="line-clamp-3 font-light">{article.data.summary}</p>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    )
+  }
 </div>
 
 <style>

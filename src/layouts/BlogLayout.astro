@@ -1,0 +1,57 @@
+---
+import Layout from './Layout.astro';
+interface Props {
+  title: string;
+  tags: Array<string>;
+  publishedDate: Date;
+}
+const { title, tags, publishedDate } = Astro.props;
+---
+
+<Layout title={title}>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.css"
+    integrity="sha384-WsHMgfkABRyG494OmuiNmkAOk8nhO1qE+Y6wns6v+EoNoTNxrWxYpl5ZYWFOLPCM"
+    crossorigin="anonymous"
+  />
+
+  <div class="flex flex-col items-center">
+    <div class="my-12 space-y-3 text-center">
+      <h2 class="text-4xl font-light">
+        {title}
+      </h2>
+      <div class="flex flex-row justify-center space-x-3">
+        {
+          tags.map((tag) => (
+            <div class="chip-shadow rounded-full border-2 border-zinc-900 bg-zinc-50 px-6 py-1 shadow-zinc-800">
+              {tag}
+            </div>
+          ))
+        }
+      </div>
+      <div class="flex flex-row justify-center space-x-3">
+        <h3 class="font-light">{publishedDate.toLocaleDateString()}</h3>
+        <h3 class="font-light">5 min read</h3>
+      </div>
+    </div>
+
+    <div
+      class="card-shadow mb-12 rounded-lg border-2 border-zinc-900 bg-zinc-50 p-10 pl-14 shadow-zinc-800"
+    >
+      <article class="prose prose-zinc lg:prose-xl">
+        <slot />
+      </article>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .card-shadow {
+    box-shadow: var(--tw-shadow-color) 7px 7px;
+  }
+
+  .chip-shadow {
+    box-shadow: var(--tw-shadow-color) 5px 5px;
+  }
+</style>
